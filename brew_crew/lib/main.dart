@@ -1,17 +1,11 @@
+import 'package:brew_crew/firebase/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:brew_crew/screen/wrapper.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: const FirebaseOptions(
-      apiKey: "AIzaSyBbtt26v7-aBMvBYd6rXb3dCzw0DkvN1Fg",
-      appId: "com.kyle.brew_crew",
-      messagingSenderId: "406099696497",
-      projectId: "brew-crew-62c77",
-    ),
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
